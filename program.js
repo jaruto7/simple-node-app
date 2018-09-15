@@ -21,13 +21,13 @@ process.stdin.on( 'readable', function() {
             // Sprawdz czy wartosc jest rowna stringowi
             case 'lang':
                 // Wyswietl jezyk Node.JS
-                process.stdout.write( 'Node.JS language: ' + process.env.lang );
+                process.stdout.write( 'Node.JS language: ' + process.env.lang /*or process.env[LANG] to get value of the object the same way*/ + '\n' );
                 // Zatrzymaj proces
                 break;
             // Sprawdz czy wartosc jest rowna stringowi    
             case 'ver':
                 // wyswietl wersje Node.JS
-                process.stdout.write( 'Node.JS version: ' + process.versions.node );
+                process.stdout.write( 'Node.JS version: ' + process.versions.node + '\n' );
                 // Zatrzymaj proces
                 break;
             // W przeciwnym razie gdy uzytkownik wpisal zla wartosc, wyswietl komunikat o bledzie
